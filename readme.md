@@ -59,7 +59,19 @@
 syntax on
 set ignorecase
 set smartindent
+set nobomb
+set tabstop=2
+set shiftwidth=2
+set expandtab
 :imap jj <Esc>
+
+fun! TrimWS()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+
+command! trimws call TrimWS()
 ```
 
 **_vsvimrc**
