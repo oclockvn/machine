@@ -65,13 +65,13 @@ set shiftwidth=2
 set expandtab
 :imap jj <Esc>
 
-fun! TrimWS()
+fun! TrimWs()
   let l:save = winsaveview()
   keeppatterns %s/\s\+$//e
   call winrestview(l:save)
 endfun
 
-command! trimws call TrimWS()
+command! TrimWs call TrimWs()
 ```
 
 **_vsvimrc**
